@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EXA Kids English Games</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff4dc;--card:#fff;--ink:#2b2d42;--mut:#6b6f85;--ok:#2f9e44;--no:#e03131;--pr:#4dabf7;--ac:#ff6b6b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d2033;--card:#2a2e48;--ink:#f1f3ff;--mut:#aab0d0}}
+:root[data-theme="dark"]{--bg:#1d2033;--card:#2a2e48;--ink:#f1f3ff;--mut:#aab0d0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:600 18px/1.3 'Baloo 2','Comic Sans MS',ui-rounded,system-ui,sans-serif}
+#app{max-width:720px;margin:0 auto;padding:12px 14px 40px}
+header{display:flex;align-items:center;gap:10px;justify-content:space-between;margin-bottom:10px}
+h1,h2{margin:0;font-size:1.35rem;font-weight:800}
+.sub{color:var(--mut);margin:0 0 12px}
+.pill{background:var(--card);border-radius:99px;padding:4px 14px;font-weight:800;box-shadow:0 3px 0 rgba(0,0,0,.12)}
+button{font:inherit;color:inherit;cursor:pointer;border:0}
+.bk{background:var(--card);border-radius:12px;width:44px;height:44px;font-size:1.3rem;box-shadow:0 3px 0 rgba(0,0,0,.12)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px}
+.mc{background:var(--card);border-radius:18px;padding:10px 6px;display:flex;flex-direction:column;align-items:center;gap:2px;box-shadow:0 4px 0 rgba(0,0,0,.12);min-height:128px}
+.mc .ic{font-size:2.2rem}.mc small{font-size:.8rem;line-height:1.1;color:var(--mut);text-align:center}.mc i{font-style:normal;font-size:.8rem;min-height:1em}
+.mc:active,.gm:active,.opts button:active{transform:translateY(3px)}
+.games{display:grid;gap:12px}
+.gm{display:flex;gap:14px;align-items:center;text-align:left;background:var(--card);border-radius:20px;padding:14px 16px;box-shadow:0 5px 0 rgba(0,0,0,.12)}
+.gm span{font-size:2.4rem}.gm b{display:block;font-size:1.2rem}.gm small{color:var(--mut)}
+.tb{height:12px;background:rgba(128,128,128,.25);border-radius:9px;overflow:hidden;margin-bottom:10px}.tb i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#ff6b6b,#fcc419,#51cf66)}
+.qa{text-align:center;margin:8px 0 14px}.em{font-size:5.5rem;line-height:1.1}.qa p{margin:4px 0}.sent{font-size:1.4rem;font-weight:800}
+.big{font-size:3.5rem;background:var(--pr);border-radius:50%;width:110px;height:110px;box-shadow:0 5px 0 rgba(0,0,0,.2)}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opts button{background:#4dabf7;color:#fff;border-radius:18px;padding:16px 8px;font-weight:800;font-size:1.2rem;box-shadow:0 5px 0 rgba(0,0,0,.18)}
+.opts button:nth-child(2){background:#ff6b6b}.opts button:nth-child(3){background:#f59f00}.opts button:nth-child(4){background:#37b24d}
+.opts.ee button{font-size:3rem;padding:10px}.opts button{display:flex;align-items:center;justify-content:center}.sp{display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.35);font-size:1.3rem;margin-left:8px;flex:none}.lc .sp{font-size:1.4rem;background:rgba(77,171,247,.25)}.lc>div{flex:1}
+.opts button.ok{outline:5px solid var(--ok);filter:brightness(1.1)}.opts button.no{opacity:.45}
+.mg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mcd{background:#4dabf7;color:#fff;border-radius:16px;min-height:84px;font-size:1.15rem;font-weight:800;box-shadow:0 4px 0 rgba(0,0,0,.15);padding:4px}
+.mcd.f{background:#fff;color:#2b2d42;font-size:2.2rem}.mcd.d{background:#b2f2bb;color:#2b2d42;opacity:.8;font-size:1.1rem}
+.sl{display:inline-block;width:38px;height:48px;border-bottom:4px solid var(--pr);margin:3px;font-size:2rem;font-weight:800}
+.shake{animation:sh .4s}@keyframes sh{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.tiles{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0}
+.tl{background:#fcc419;border-radius:12px;width:50px;height:54px;font-size:1.6rem;font-weight:800;box-shadow:0 4px 0 rgba(0,0,0,.18)}.tl:disabled{opacity:.25}
+.sm{background:var(--card);border-radius:99px;padding:6px 16px;box-shadow:0 3px 0 rgba(0,0,0,.12);font-weight:800}
+.ln{display:grid;gap:8px}.lc{display:flex;gap:12px;align-items:center;background:var(--card);border-radius:16px;padding:10px 14px;text-align:left;box-shadow:0 3px 0 rgba(0,0,0,.1)}
+.lc span{font-size:2.3rem}.lc small{display:block;color:var(--mut);font-weight:500}
+.end{text-align:center;padding-top:30px}.stars{font-size:2.4rem;margin:6px}
+.cta,.cta2{display:block;width:100%;max-width:340px;margin:10px auto;border-radius:18px;padding:14px;font-weight:800;font-size:1.2rem;box-shadow:0 5px 0 rgba(0,0,0,.18)}
+.cta{background:#37b24d;color:#fff}.cta2{background:var(--card)}
+.fl{position:fixed;top:-2rem;font-size:1.8rem;animation:fall 2.8s linear forwards;pointer-events:none}@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+.nm{margin-bottom:12px}.nm input{font:inherit;padding:8px 12px;border-radius:12px;border:2px solid var(--pr);width:75%;background:var(--card);color:var(--ink)}.gl{display:block;text-align:center;margin-top:18px;color:var(--mut);font-weight:700}select{font:inherit;width:100%;padding:10px;border-radius:12px;margin:8px 0;background:var(--card);color:var(--ink)}.dr,.dr2{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;background:var(--card);border-radius:12px;padding:8px 12px;margin:6px 0}.dr2{display:block}.lc2{padding:4px 0;color:var(--mut);font-weight:500;font-size:.95rem}</style></head><body><div id="app"></div>
+<script>
+const RAW=`1@Hello, Friends!@happy|😀|I’m happy!~sad|😢|I’m sad!~sleepy|😴|I’m sleepy!~hungry|🤤|I’m hungry!~hello|👋|Hello, friends!~goodbye|🙋|Goodbye, see you!~seven|7️⃣|I’m seven years old.
+2@Colors All Around@red|🟥|It’s red!~blue|🟦|It’s blue!~yellow|🟨|It’s yellow!~green|🟩|It’s green!~orange|🟧|It’s orange!~purple|🟪|It’s purple!~pink|🌸|It’s pink!~brown|🟫|It’s brown!
+3@Animal Friends@cat|🐱|It’s a cat!~dog|🐶|It’s a dog!~bird|🐦|It’s a bird!~fish|🐟|It’s a fish!~frog|🐸|It’s a frog!~duck|🦆|It’s a duck!~jump|🤸|A frog can jump.~fly|🕊️|A bird can fly.~swim|🏊|A fish can swim.
+4@My Body@hair|💇|I have hair.~eyes|👀|I have two eyes.~ears|👂|I have two ears.~nose|👃|It’s my nose.~mouth|👄|It’s my mouth.~hands|🙌|Clap your hands!~legs|🦵|Shake your legs!~feet|🦶|Touch your feet!
+5@Yummy Food@rice|🍚|I like rice!~eggs|🥚|I like eggs!~milk|🥛|I like milk!~apples|🍎|I like apples!~pizza|🍕|I like pizza!~ice cream|🍦|I like ice cream!~cookies|🍪|I like cookies!~broccoli|🥦|I don’t like broccoli!
+6@Toy Time@ball|⚽|I have a ball.~car|🚗|I have a car.~teddy bear|🧸|I have a teddy bear.~robot|🤖|I have a robot.~kite|🪁|I have a kite.~blocks|🧱|I have blocks.~box|📦|It’s in the box.~table|🍽️|It’s on the table.
+7@My Family@dad|👨|This is my dad.~mom|👩|This is my mom.~grandpa|👴|This is my grandpa.~grandma|👵|This is my grandma.~brother|👦|This is my brother.~sister|👧|This is my sister.~baby|👶|This is my baby brother.
+8@My House@bedroom|🛏️|I sleep in the bedroom.~bathroom|🚿|I wash in the bathroom.~kitchen|🍳|Mom is in the kitchen.~living room|🛋️|Dad is in the living room.
+9@Weather & Clothes@sunny|☀️|It’s sunny!~rainy|🌧️|It’s rainy!~cloudy|☁️|It’s cloudy!~windy|💨|It’s windy!~hat|👒|Put on your hat!~sunglasses|🕶️|Put on your sunglasses!~raincoat|🌧️🧥|Put on your raincoat!~boots|🥾|Put on your boots!~umbrella|☂️|Take an umbrella!~jacket|🧥|Put on your jacket!
+10@My Day@wake up|⏰|I wake up.~brush my teeth|🪥|I brush my teeth.~eat breakfast|🥞|I eat breakfast.~go to school|🏫|I go to school.~play|🎮|I play.~take a bath|🛁|I take a bath.~eat dinner|🍝|I eat dinner.~go to bed|🛌|I go to bed.
+11@Let’s Go!@bus|🚌|I go to school by bus.~motorbike|🏍️|Vroom, vroom, a motorbike!~bike|🚲|Ring, ring, a bike!~train|🚆|Choo, choo, a train!~plane|✈️|Zoom, a plane!~boat|⛵|Toot, toot, a boat!~walk|🚶|I walk to school.
+12@Super Review 1@R1-11
+13@My School Bag@pencil|✏️|I have a pencil.~book|📖|I have a book.~eraser|🧽|I have an eraser.~ruler|📏|I have a ruler.~crayon|🖍️|I have a crayon.~bag|🎒|This is my bag.
+14@I Can Do It!@dance|💃|I can dance!~sing|🎤|I can sing!~swim|🏊|I can swim!~draw|🎨|I can draw!~ride a bike|🚴|I can ride a bike!~jump rope|🪢|I can jump rope!~climb|🧗|I can climb!~read|📚|I can read!
+15@At the Park@running|🏃|I’m running!~jumping|🤸|I’m jumping!~eating|🍔|I’m eating!~sleeping|😴|I’m sleeping!~reading|📖|I’m reading!~flying a kite|🪁|I’m flying a kite!~playing ball|⚽|I’m playing ball!~riding a bike|🚲|I’m riding a bike!
+16@When I Grow Up@doctor|🧑‍⚕️|She’s a doctor.~teacher|🧑‍🏫|She’s a teacher.~chef|🧑‍🍳|He’s a chef.~farmer|🧑‍🌾|He’s a farmer.~police officer|👮|She’s a police officer.~firefighter|🧑‍🚒|He’s a firefighter.~pilot|🧑‍✈️|He’s a pilot.~singer|🎤|She’s a singer.
+17@Pip’s Shop@eleven|11|I have eleven coins.~twelve|12|It’s twelve coins.~thirteen|13|I have thirteen coins.~fifteen|15|It’s fifteen coins.~eighteen|18|It’s eighteen coins.~twenty|20|It’s twenty coins.~cookie|🍪|Can I have a cookie, please?~coins|🪙|I have fifteen coins.
+18@Days of the Week@Monday|1️⃣|Today is Monday.~Tuesday|2️⃣|Today is Tuesday.~Wednesday|3️⃣|Today is Wednesday.~Thursday|4️⃣|Today is Thursday.~Friday|5️⃣|Today is Friday.~Saturday|6️⃣|On Saturday, I swim!~Sunday|7️⃣|On Sunday, I sleep a lot!
+19@How Do You Feel?@angry|😠|I’m angry!~scared|😨|I’m scared!~tired|🥱|I’m tired!~excited|🤩|I’m excited!~happy|😀|I’m happy because it’s my birthday!~sad|😢|I’m sad because I can’t find my ball.
+20@My Town@school|🏫|Let’s go to the school!~hospital|🏥|Let’s go to the hospital!~park|🌳|Let’s go to the park!~shop|🏪|Let’s go to the shop!~library|🏛️|Let’s go to the library!~zoo|🦁|Let’s go to the zoo!
+21@What Time Is It?@one o’clock|🕐|It’s one o’clock.~three o’clock|🕒|It’s three o’clock.~six o’clock|🕕|It’s six o’clock.~seven o’clock|🕖|It’s seven o’clock.~nine o’clock|🕘|It’s nine o’clock.~twelve o’clock|🕛|It’s twelve o’clock.
+22@Happy Birthday!@January|❄️|My birthday is in January.~March|🌷|My birthday is in March.~May|🌼|My birthday is in May.~July|🏖️|My birthday is in July.~October|🎃|My birthday is in October.~December|🎄|My birthday is in December.~birthday|🎂|Happy birthday!~gift|🎁|This gift is for you!
+23@Sports & Hobbies@playing football|⚽|I like playing football!~playing badminton|🏸|I like playing badminton!~playing basketball|🏀|I like playing basketball!~swimming|🏊|I like swimming!~drawing|🎨|I like drawing!~reading|📖|I like reading!~singing|🎤|I like singing!~playing games|🎮|I like playing games!
+24@Super Review 2@R13-23
+25@Yesterday@played|⚽|Yesterday I played football.~cooked|🍜|Yesterday I cooked noodles.~watched|📺|Yesterday I watched TV.~cleaned|🧹|Yesterday I cleaned my room.~helped|🤝|Yesterday I helped my mom.~painted|🖼️|Yesterday I painted a picture.~walked|🚶|Yesterday I walked to school.~jumped|🤸|Yesterday I jumped.
+26@Where Did You Go?@went|🏞️|I went to the zoo.~ate|🍦|I ate ice cream.~saw|👀|I saw a giraffe.~had|🍰|I had a cake.~drank|🥛|I drank milk.~made|🗼|I made a tower.
+27@Bigger & Smaller@bigger|🐘|An elephant is bigger than a mouse.~smaller|🐭|A mouse is smaller than a cat.~taller|🦒|A giraffe is taller than a house.~faster|✈️|A plane is faster than a bike.~slower|🐢|A bike is slower than a plane.
+28@Animal Olympics@ran faster|🐕|The dog ran faster than the cat!~jumped higher|🐸|The frog jumped higher than the duck!~swam faster|🏊|Pip swam faster than the fish!~won|🥇|Pip won!~medal|🏅|The medal ceremony!~race|🏁|The running race!
+29@There Is, There Are@bed|🛏️|There is a bed.~lamp|💡|There is a lamp.~chair|🪑|There is a chair.~clock|🕰️|There is a clock.~balls|⚽|There are three balls.~teddy bear|🧸|There is a teddy bear.
+30@This Weekend@go swimming|🏊|I’m going to go swimming.~visit grandma|👵|I’m going to visit grandma.~ride a bike|🚴|I’m going to ride a bike.~go to the zoo|🦓|I’m going to go to the zoo.~tomorrow|📅|I’m going to swim tomorrow.~eat cake|🍰|Pip is going to eat cake!
+31@Beach Holiday@shell|🐚|I found a shell!~sandcastle|🏰|I made a sandcastle!~bucket|🪣|I have a bucket.~sunscreen|🧴|Put on sunscreen!~sea|🌊|Let’s swim in the sea!~sand|🏖️|Let’s play in the sand!
+32@Pip’s Big Trip@suitcase|🧳|Pack your suitcase!~trip|🗺️|Pip’s big trip!~holiday|🎉|Last holiday, I went to the beach.~tower|🗼|There are two towers.~flag|🚩|There is a flag.~door|🚪|There is a door.
+33@The Lion and the Mouse@lion|🦁|A big lion is sleeping.~mouse|🐭|A small mouse runs.~net|🕸️|The lion is in a net!~angry|😠|The lion is angry!~scared|😨|The mouse is scared.~help|🆘|Help me, please!~free|🕊️|The lion is free!
+34@What’s the Matter?@headache|🤕|I have a headache.~stomachache|🤢|I have a stomachache.~toothache|🦷|I have a toothache.~cold|🤧|I have a cold.~rest|🛌|You should rest.~drink water|💧|You should drink water.~see a doctor|🧑‍⚕️|You should see a doctor.~take medicine|💊|You should take medicine.
+35@All About Me@name|🏷️|My name is Pip.~birthday|🎂|My birthday is in May.~family|👨‍👩‍👧‍👦|This is my family.~favorite|⭐|My favorite color is blue.~hobby|🎯|My hobby is swimming.~because|💬|I’m happy because it’s my birthday!
+36@Super Review 3@R25-35
+37@Let’s Make a Sandwich!@bread|🍞|Put the bread on the plate.~cheese|🧀|Put the cheese on the bread.~lettuce|🥬|Put the lettuce on the bread.~tomato|🍅|Put the tomato on the cheese.~wash|🧼|Wash your hands.~cut|🔪|Cut the bread.~eat|😋|Eat your sandwich!~sandwich|🥪|Let’s make a sandwich!
+38@Animals Around the World@penguin|🐧|A penguin lives on the ice.~panda|🐼|The panda is black and white.~camel|🐪|A camel has a hump.~kangaroo|🦘|A kangaroo can jump!~ice|🧊|It lives on the ice.~desert|🏜️|The desert is hot and dry.~forest|🌲|The forest has many trees.~bamboo|🎋|A panda eats bamboo.
+39@My Best Friend@long hair|💁‍♀️|Rina has long hair.~short hair|🧑|Budi has short hair.~curly hair|🧑‍🦱|Adi has curly hair.~glasses|👓|Bayu wears glasses.~kind|🤗|He is kind.~funny|🤣|She is funny!~friendly|👋|He is friendly.~smart|🧠|She is smart!
+40@Superheroes@fly|🦅|He can fly!~strong|💪|He is super strong!~cape|🦸|A hero has a red cape.~mask|🎭|A hero has a mask.~star|⭐|There is a star.~belt|🥋|A hero has a belt.~dark|🌑|She can see in the dark!
+41@Treasure Hunt@go straight|⬆️|Go straight!~turn left|⬅️|Turn left!~turn right|➡️|Turn right!~stop|🛑|Stop!~behind|🔙|It’s behind the bush.~in front of|🔜|It’s in front of the bush.~between|↔️|It’s between the bushes.~next to|👫|It’s next to the bush.~treasure|💎|Where is the treasure?
+42@Four Seasons@spring|🌷|Flowers grow in spring.~summer|🏖️|It’s hot in summer.~autumn|🍂|Leaves fall in autumn.~winter|⛄|It’s cold in winter.~snowy|❄️|It’s cold and snowy.~hot|🔥|It’s hot and sunny!~cold|🥶|It’s cold!~Indonesia|🇮🇩|I’m from Indonesia.
+43@Let’s Go Shopping@T-shirt|👕|This is a T-shirt.~dress|👗|This is a dress.~shorts|🩳|These are shorts.~shoes|👟|These are shoes.~too big|📏|Oh no! It’s too big!~too small|🤏|Oh no! It’s too small!~just right|👍|Yay! It’s just right!~how much|💰|How much is this T-shirt?
+44@Around the World@Japan|🇯🇵|Pip went to Japan.~Sweden|🇸🇪|He went to Sweden.~Australia|🇦🇺|Then he went to Australia.~Indonesia|🇮🇩|Pip went home to Indonesia.~passport|🛂|Pip has a passport.~world|🌍|Around the world!~snowman|⛄|He made a snowman.
+45@Story Maker@dragon|🐉|A big dragon came!~castle|🏰|He lived in a castle.~penguin|🐧|There was a penguin named Pip.~once upon a time|📖|Once upon a time, there was a lion.~finally|🏁|Finally, they were best friends.~the end|🔚|The end!~friends|🤝|They were best friends.
+46@Magic Words@please|🙏|May I borrow your pencil, please?~thank you|💖|Thank you!~sorry|😔|Oh, sorry!~excuse me|🙋|Excuse me, can you help me?~you’re welcome|😊|You’re welcome!~no problem|👌|No problem!~sure|👍|Sure! Here you are.
+47@Grand Review@Rall
+48@Graduation Day@Rall`;
+const M={},ALL=[],$=id=>document.getElementById(id),sh=a=>[...a].sort(()=>Math.random()-.5),uq=a=>a.filter((x,i)=>a.findIndex(y=>y.w==x.w)==i);
+RAW.split('\n').forEach(l=>{const[n,t,x]=l.split('@'),r=x[0]=='R';const m=M[n]={n:+n,t,r:r?x.slice(1):null,it:r?[]:x.split('~').map(s=>{const[w,e,s2]=s.split('|');return{w,e,s:s2}})};if(!r)ALL.push(...m.it)});
+let S={},ST={};try{ST=JSON.parse(localStorage.getItem('exa')||'{}')}catch(e){}
+const save=()=>{try{localStorage.setItem('exa',JSON.stringify(ST))}catch(e){}},tot=()=>Object.values(ST).reduce((a,b)=>a+b,0);
+function pool(n){const m=M[n];if(!m.r)return m.it;let a=ALL;if(m.r!='all'){const[x,y]=m.r.split('-');a=[];for(let i=+x;i<=+y;i++)if(M[i]&&!M[i].r)a.push(...M[i].it)}return sh(uq(a)).slice(0,12)}
+function say(t){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=.85;speechSynthesis.speak(u)}catch(e){}}
+let ac;function beep(ok){try{ac=ac||new AudioContext();const o=ac.createOscillator(),g=ac.createGain();o.connect(g);g.connect(ac.destination);o.type=ok?'triangle':'sawtooth';o.frequency.value=ok?660:180;g.gain.value=.12;o.start();o.frequency.setValueAtTime(ok?880:140,ac.currentTime+.1);o.stop(ac.currentTime+.25)}catch(e){}}
+const clr=()=>{clearInterval(S.iv);try{speechSynthesis.cancel()}catch(e){}},
+blank=it=>{const r=new RegExp(it.w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'i');return r.test(it.s)?it.s.replace(r,'_____'):null},
+hd=(b,mid,r)=>`<header><button class="bk" onclick="${b}">←</button><div class="pill">${mid}</div><div class="pill">${r}</div></header>`;
+function rain(){for(let i=0;i<24;i++){const s=document.createElement('span');s.className='fl';s.textContent=['⭐','🎉','🌟','🎈'][i%4];s.style.cssText=`left:${Math.random()*100}%;animation-delay:${Math.random()*1.5}s`;document.body.appendChild(s);setTimeout(()=>s.remove(),4500)}}
+function home(){clr();S={};$('app').innerHTML=`<header><h1>🐧 EXA Kids English</h1><div class="pill">⭐ ${tot()}</div></header><p class="sub">Pilih pertemuan, lalu pilih game. Ayo kumpulkan bintang!</p><div class="nm">👤 <input id="nm" placeholder="Tulis namamu" value="${esc(getN())}" onchange="setN(this.value)" maxlength="30"></div><div class="grid">${Object.values(M).map(m=>`<button class="mc" onclick="menu(${m.n})"><span class="ic">${m.r?(m.r=='all'?'🏆':'⭐'):m.it[0].e}</span><b>${m.n}</b><small>${m.t}</small><i>${'⭐'.repeat(ST[m.n]||0)}</i></button>`).join('')}</div><a class="gl" href="#guru">👩‍🏫 Halaman guru</a>`}
+function menu(n){clr();S={n};$('app').innerHTML=hd('home()','Meeting '+n,'⭐ '+(ST[n]||0))+`<h2 style="margin:6px 0 12px">${M[n].t}</h2><div class="games">${[['quiz','🎯','Quiz Kilat','Jawab cepat sebelum waktu habis!'],['listen','🎧','Dengar & Pilih','Dengarkan, lalu pilih gambarnya'],['match','🃏','Cari Pasangan','Cocokkan kata dan gambar'],['spell','🔤','Susun Huruf','Susun huruf menjadi kata'],['learn','📖','Belajar Dulu','Kartu kosakata + suara']].map(g=>`<button class="gm" onclick="play('${g[0]}',${n})"><span>${g[1]}</span><div><b>${g[2]}</b><small>${g[3]}</small></div></button>`).join('')}</div>`}
+function play(mode,n){clr();S={n,mode,pool:pool(n)};({quiz:startQ,listen:startQ,match,spell,learn})[mode]()}
+function learn(){$('app').innerHTML=hd(`menu(${S.n})`,'Belajar','🔊 tap')+`<div class="ln">${S.pool.map((x,i)=>`<button class="lc" onclick="say(S.pool[${i}].w)"><span>${x.e}</span><div><b>${x.w}</b><small>${x.s}</small></div><span class="sp">🔊</span><span class="sp" onclick="event.stopPropagation();say(S.pool[${i}].s)">💬</span></button>`).join('')}</div>`}
+function startQ(){let a=[];while(a.length<10)a.push(...sh(S.pool));S.qs=a.slice(0,10);S.q=S.score=S.ok=S.st=0;S.wr=[];nextQ()}
+function nextQ(){if(S.q>=S.qs.length){const r=S.ok/S.qs.length,st=r>=.9?3:r>=.6?2:1;ST[S.n]=Math.max(ST[S.n]||0,st);save();return fin(`${S.ok}/${S.qs.length} benar · ${S.score} poin`,st)}
+const it=S.it=S.qs[S.q],L=S.mode=='listen',bl=!L&&S.q%2?blank(it):null,d=[...sh(S.pool),...sh(ALL)].filter((x,i,a)=>x.w!=it.w&&a.findIndex(y=>y.w==x.w)==i).slice(0,3),o=sh([it,...d]);
+$('app').innerHTML=hd(`menu(${S.n})`,`Soal ${S.q+1}/${S.qs.length}`,'⭐ '+S.score)+`<div class="tb"><i id="tm"></i></div><div class="qa">${L?`<button class="big" onclick="say(S.it.w)">🔊</button><p>Dengarkan, lalu pilih gambarnya!</p>`:`<div class="em">${it.e}</div>${bl?`<p class="sent">${bl}</p><button class="sm" onclick="say(S.it.s.replace(new RegExp(S.it.w,'i'),'hmm'))">🔊 Dengar kalimat</button>`:'<p>Apa bahasa Inggrisnya? Tap 🔊 di tiap kata!</p>'}`}</div><div class="opts ${L?'ee':''}">${o.map(x=>`<button data-c="${x.w==it.w?1:0}" onclick="ans(this)">${L?x.e:`<span>${x.w}</span><span class="sp" onclick="event.stopPropagation();say('${x.w}')">🔊</span>`}</button>`).join('')}</div>`;
+if(L)setTimeout(()=>say(it.w),300);S.lock=0;S.t0=Date.now();clearInterval(S.iv);S.iv=setInterval(()=>{const r=1-(Date.now()-S.t0)/20000;$('tm').style.width=Math.max(r,0)*100+'%';if(r<=0)ans(null)},100)}
+function ans(b){if(S.lock)return;S.lock=1;clearInterval(S.iv);const ok=b&&b.dataset.c=='1',r=Math.max(0,1-(Date.now()-S.t0)/20000);
+if(ok){S.ok++;S.st++;S.score+=500+Math.round(r*400)+Math.min(S.st,5)*50}else{S.st=0;S.wr.push(S.it.w)}beep(ok);
+document.querySelectorAll('.opts button').forEach(x=>{if(x.dataset.c=='1')x.classList.add('ok');else x.classList.add('no')});say(S.it.s);setTimeout(()=>{S.q++;nextQ()},1900)}
+function fin(msg,st){clr();S.msg=msg;send(st);$('app').innerHTML=`<div class="end"><div class="em">${['','🙂','😄','🏆'][st]}</div><h2>${['','Bagus!','Hebat!','Luar biasa!'][st]}</h2><div class="stars">${'⭐'.repeat(st)}</div><p>${msg}</p><p id="snd" class="sub"></p><button class="cta" onclick="play('${S.mode}',${S.n})">🔁 Main lagi</button><button class="cta2" onclick="menu(${S.n})">📋 Pilih game lain</button></div>`;rain();beep(1)}
+function match(){const p=sh(S.pool).slice(0,6);S.cards=sh(p.flatMap(x=>[{k:x.w,t:x.w,w:1},{k:x.w,t:x.e}]));S.open=[];S.done=S.mv=0;S.np=p.length;drawM()}
+function drawM(){$('app').innerHTML=hd(`menu(${S.n})`,'Cari Pasangan','Langkah '+S.mv)+`<div class="mg">${S.cards.map((c,i)=>`<button class="mcd ${c.f?'f':''} ${c.d?'d':''}" onclick="flip(${i})">${c.f||c.d?c.t:'❓'}</button>`).join('')}</div>`}
+function flip(i){const c=S.cards[i];if(c.f||c.d||S.open.length>1)return;c.f=1;S.open.push(i);if(c.w)say(c.t);
+if(S.open.length==2){S.mv++;const[a,b]=S.open.map(j=>S.cards[j]);if(a.k==b.k){a.d=b.d=1;a.f=b.f=0;S.done++;S.open=[];beep(1)}else{beep(0);setTimeout(()=>{a.f=b.f=0;S.open=[];drawM()},1000)}}
+drawM();if(S.done==S.np)setTimeout(()=>{const st=S.mv<=S.np+3?3:S.mv<=S.np*2?2:1;ST[S.n]=Math.max(ST[S.n]||0,st);save();fin(`Selesai dalam ${S.mv} langkah`,st)},700)}
+const lt=w=>w.toLowerCase().replace(/[^a-z]/g,'');
+function spell(){let p=S.pool.filter(x=>lt(x.w).length<=9);if(p.length<3)p=S.pool;S.sp=sh(p).slice(0,8);S.q=S.ok=0;S.wr=[];nextS()}
+function nextS(){if(S.q>=S.sp.length){const r=S.ok/S.sp.length,st=r>=.9?3:r>=.6?2:1;ST[S.n]=Math.max(ST[S.n]||0,st);save();return fin(`${S.ok}/${S.sp.length} benar tanpa salah`,st)}
+const it=S.it=S.sp[S.q];S.ans=lt(it.w);S.cur=[];S.bad=0;S.tl=sh(S.ans.split('').map((c,i)=>({c,i})));S.lock=0;drawS()}
+function drawS(sk){const it=S.it,bl=blank(it);$('app').innerHTML=hd(`menu(${S.n})`,`Kata ${S.q+1}/${S.sp.length}`,'⭐ '+S.ok)+`<div class="qa"><div class="em">${it.e}</div>${bl?`<p>${bl}</p>`:''}<p><small>${it.w.split(' ').map(x=>lt(x).length).join(' + ')} huruf</small></p><button class="sm" onclick="say(S.it.w)">🔊 Dengar</button></div><div class="qa ${sk?'shake':''}">${S.ans.split('').map((_,i)=>`<span class="sl">${S.cur[i]?S.cur[i].c:''}</span>`).join('')}</div><div class="tiles">${S.tl.map(t=>`<button class="tl" ${S.cur.includes(t)?'disabled':''} onclick="pk(${t.i})">${t.c}</button>`).join('')}<button class="tl" style="background:#ff8787" onclick="S.cur.pop();drawS()">⌫</button></div>`}
+function pk(i){if(S.lock)return;S.cur.push(S.tl.find(x=>x.i==i));if(S.cur.length<S.ans.length){say(S.cur[S.cur.length-1].c);return drawS()}
+if(S.cur.map(t=>t.c).join('')==S.ans){S.lock=1;if(!S.bad)S.ok++;beep(1);say(S.it.w);drawS();setTimeout(()=>{S.q++;nextS()},1300)}
+else{S.bad=1;S.wr.push(S.it.w);S.lock=1;beep(0);drawS(1);setTimeout(()=>{S.cur=[];S.lock=0;drawS()},700)}}
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])),getN=()=>{try{return localStorage.getItem('exaN')||''}catch(e){return''}},setN=v=>{try{localStorage.setItem('exaN',v.trim())}catch(e){}},MD={quiz:'Quiz',listen:'Dengar',match:'Pasangan',spell:'Huruf'},goHome=()=>{location.hash='';home()},route=()=>location.hash=='#guru'?dash():home();
+async function send(st){const n=S.n,md=S.mode,msg=S.msg,wr=S.wr||[],nm=getN(),t=x=>{const e=$('snd');if(e)e.textContent=x};
+if(!nm)return t('⚠️ Tulis namamu di halaman awal supaya nilai terkirim ke guru.');
+try{const db=window.claude&&await claude.use('db'),us=window.claude&&await claude.use('user'),id=us&&await us.id();if(!db||!id)throw 0;
+const ref=db.collection('results').doc(id),s=await ref.get(),d=s.exists?s.data():{},m=d.m||{},k=n+'_'+md,o=m[k]||{tries:0,wr:[]};
+m[k]={st:Math.max(o.st||0,st),msg,at:Date.now(),tries:o.tries+1,wr:[...new Set([...(o.wr||[]),...wr])].slice(-15)};await ref.set({name:nm,m});t('✅ Hasil terkirim ke guru!')}
+catch(x){t('Hasil belum terkirim ke guru. Minta orang tua kirim lewat WhatsApp:');const a=document.createElement('a');a.href='https://wa.me/?text='+encodeURIComponent(`${nm} · Meeting ${n} ${M[n].t} · ${MD[md]} · ${msg} · ${'⭐'.repeat(st)}`);a.target='_blank';a.textContent=' 📤 Kirim WhatsApp';const e=$('snd');if(e)e.appendChild(a)}}
+async function dash(){clr();$('app').innerHTML=`<header><button class="bk" onclick="goHome()">←</button><h1>👩‍🏫 Dashboard Guru</h1></header><p class="sub" id="ds">Memuat…</p>`;
+try{const us=window.claude&&await claude.use('user'),db=window.claude&&await claude.use('db');
+if(!us||!db||!(await us.canEdit()))return $('ds').textContent='Halaman ini hanya untuk guru (pemilik halaman). Pastikan Anda sudah masuk ke akun Claude Anda.';
+const tm=setTimeout(()=>{const e=$('ds');if(e)e.textContent='Belum ada data murid, atau koneksi lambat.'},10000);
+db.collection('results').onSnapshot(sn=>{clearTimeout(tm);drawD(sn.docs.map(x=>x.data()).sort((a,b)=>String(a.name).localeCompare(String(b.name))))},()=>{$('ds').textContent='Gagal memuat data.'})}catch(e){$('ds').textContent='Dashboard belum bisa dibuka di sini.'}}
+function drawD(R){S.R=R;const sel=$('mt')?+$('mt').value:1,all=R.flatMap(r=>Object.values(r.m||{})),wc={};all.forEach(x=>(x.wr||[]).forEach(w=>wc[w]=(wc[w]||0)+1));
+const top=Object.entries(wc).sort((a,b)=>b[1]-a[1]).slice(0,10),dt=t=>new Date(t).toLocaleDateString('id-ID',{day:'numeric',month:'short'}),ks=r=>Object.entries(r.m||{});
+$('app').innerHTML=`<header><button class="bk" onclick="goHome()">←</button><h1>👩‍🏫 Dashboard Guru</h1></header><div class="pill" style="display:inline-block;margin-bottom:10px">👦 ${R.length} murid · 🎮 ${all.reduce((a,x)=>a+x.tries,0)} latihan</div>
+<h2>✅ Cek PR per pertemuan</h2><select id="mt" onchange="drawD(S.R)">${Object.values(M).map(m=>`<option value="${m.n}" ${m.n==sel?'selected':''}>Meeting ${m.n} · ${m.t}</option>`).join('')}</select>
+${R.map(r=>{const x=ks(r).filter(([k])=>k.split('_')[0]==sel),b=Math.max(0,...x.map(a=>a[1].st));return`<div class="dr"><b>${esc(r.name||'?')}</b><span>${x.length?'✅ '+'⭐'.repeat(b)+' · '+x.map(a=>MD[a[0].split('_')[1]]+' '+esc(a[1].msg.split(' · ')[0])).join(', '):'❌ belum'}</span></div>`}).join('')||'<p class="sub">Belum ada data murid.</p>'}
+<h2>🔁 Kata yang sering salah</h2><p>${top.map(([w,c])=>`<span class="pill">${esc(w)} ×${c}</span>`).join(' ')||'Belum ada data.'}</p>
+<h2>📋 Riwayat murid</h2>${R.map(r=>`<details class="dr2"><summary><b>${esc(r.name||'?')}</b> · ${ks(r).length} game</summary>${ks(r).sort((a,b)=>b[1].at-a[1].at).map(([k,v])=>`<div class="lc2">Meeting ${k.split('_')[0]} · ${MD[k.split('_')[1]]} · ${'⭐'.repeat(v.st)} · ${esc(v.msg)} · ${v.tries}× · ${dt(v.at)}</div>`).join('')}</details>`).join('')}`}
+window.onhashchange=route;route();
+</script></body></html>
